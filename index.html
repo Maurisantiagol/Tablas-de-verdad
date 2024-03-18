@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablas de verdad</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="mainContainer">
+  <h1>Tablas de verdad</h1>
+  <p>Bienvenido a la calculadora de tablas de verdad, en esta calculadora vas a poder calcular 2 operaciones logicas
+    eligiendo sus simbolos.
+    <br>
+    Las operaciones son las siguientes:
+    <br>1.(_p _ _q) _(_r _ _s)
+    <br>2.[(p _ _q) _ s] _ [_ p_(r _ _s)]
+  </p>
+  <p>Arrastre las operaciones y los simbolos a los cuadros del mismo color</p>
+  <p>
+  </p>
+  <div class="container">
+    <label for="input1">Operacion 1: (</label>
+    <div id="input-container"><input class="inputsimbolo" type="text" id="input-simbolo1" name="input1" maxlength="1"
+        value="_" readonly=""></div>
+    <label for="input2">p</label>
+    <div id="input-container"><input class="inputOperacion" type="text" id="input-operacion1" name="input2"
+        maxlength="1" value="∧" readonly=""></div>
+    <div id="input-container"><input class="inputsimbolo" type="text" id="input-simbolo2" name="input3" maxlength="1"
+        value="¬" readonly=""></div>
+    <label for="input4">q)</label>
+    <div id="input-container"><input class="inputOperacion" type="text" id="input-operacion2" name="input4"
+        maxlength="1" value="↔" readonly=""></div>
+    <label for="input5">(</label>
+    <div id="input-container"><input class="inputsimbolo" type="text" id="input-simbolo3" name="input5" maxlength="1"
+        value="_" readonly=""></div>
+    <label for="input6">r</label>
+    <div id="input-container"><input class="inputOperacion" type="text" id="input-operacion3" name="input6"
+        maxlength="1" value="→" readonly=""></div>
+    <div id="input-container"><input class="inputsimbolo" type="text" id="input-simbolo4" name="input7" maxlength="1"
+        value="_" readonly=""></div>
+    <label for="input7">s)</label>
+  </div>
+  <p></p>
+  <p>
+  </p>
+  <div class="container">
+    <label for="input8">Operacion 2: </label>
+    <label for="input9">[(p</label>
+    <div id="input-container"><input class="inputOperacion" type="text" id="input-operacion4" name="input8"
+        maxlength="1" value="→" readonly=""></div>
+    <div id="input-container"><input class="inputsimbolo" type="text" id="input-simbolo5" name="input9" maxlength="1"
+        value="¬" readonly=""></div>
+    <label for="input10">q)</label>
+    <div id="input-container"><input class="inputOperacion" type="text" id="input-operacion5" name="input10"
+        maxlength="1" value="→" readonly=""></div>
+    <label for="input11">s]</label>
+    <div id="input-container"><input class="inputOperacion" type="text" id="input-operacion6" name="input11"
+        maxlength="1" value="∨" readonly=""></div>
+    <label for="input12">[</label>
+    <div id="input-container"><input class="inputsimbolo" type="text" id="input-simbolo6" name="input12" maxlength="1"
+        value="¬" readonly=""></div>
+    <label for="input13">p</label>
+    <div id="input-container"><input class="inputOperacion" type="text" id="input-operacion7" name="input13"
+        maxlength="1" value="∧" readonly=""></div>
+    <label for="input14">(s</label>
+    <div id="input-container"><input class="inputOperacion" type="text" id="input-operacion8" name="input14"
+        maxlength="1" value="→" readonly=""></div>
+    <div id="input-container"><input class="inputsimbolo" type="text" id="input-simbolo7" name="input15" maxlength="1"
+        value="¬" readonly=""></div>
+    <label for="input15">q)]</label>
+  </div>
+  <p></p>
+  <p>Operaciones logicas:</p>
+  <div class="container">
+    <div class="operacion" draggable="true">∨</div>
+    <div class="operacion" draggable="true">∧</div>
+    <div class="operacion" draggable="true">→</div>
+    <div class="operacion" draggable="true">↔</div>
+  </div>
+  <p>Simbolos logicos</p>
+  <div class="container">
+    <div class="symbol" draggable="true">_</div>
+    <div class="symbol" draggable="true">¬</div>
+
+  </div>
+  <button class="generar-boton" onclick="llenarTabla()">Generar tabla</button>
+</div>
+  <br>
+  <br>
+  <br>
+  <table id="miTabla1" border="1">
+    <thead>
+        <tr>
+            <th>p</th>
+            <th>q</th>
+            <th>r</th>
+            <th>s</th>
+            <th id="theader1">(_p _ _q)</th>
+            <th id="theader2">(_r _ _s)</th>
+            <th id="theader3">(_p _ _q) _(_r _ _s)</th>
+        </tr>
+    </thead>
+    <tbody id="tbody1">
+        <!-- El cuerpo de la tabla se llenará dinámicamente -->
+    </tbody>
+</table>
+<table id="miTabla2" border="1">
+  <thead>
+      <tr>
+          <th>p</th>
+          <th>q</th>
+          <th>s</th>
+          <th id="theader4">(p _ _q)</th>
+          <th id="theader5">[(p _ _q) _ s]</th>
+          <th id="theader6">(s _ _q)</th>
+          <th id="theader7">_ p _ (s _ _q) ]</th>
+          <th id="theader8">[(p _ _q) _ s] _ [_ p_(s _ _q)]</th>
+          
+      </tr>
+  </thead>
+  <tbody id="tbody2">
+      <!-- El cuerpo de la tabla se llenará dinámicamente -->
+  </tbody>
+</table>
+
+  <script src="./js/dragAndDropsSimbolos.js"></script>
+  <script src="./js/dragAndDropOperaciones.js"></script>
+  <script src="./js/tablas.js"></script>
+  <script src="./js/ejecutarTablas.js"></script>
+
+  
+
+
+
+
+</body>
+
+</html>

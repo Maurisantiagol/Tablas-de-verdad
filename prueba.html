@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastrar y Soltar</title>
+    <style>
+        /* Estilo para los símbolos */
+        .symbol {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            cursor: move; /* Cambia el cursor al arrastrar */
+        }
+
+        /* Estilo para el área de destino */
+        #input-container {
+            width: 200px;
+            height: 100px;
+            border: 2px dashed #999;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="symbol" draggable="true">A</div>
+    <div class="symbol" draggable="true">B</div>
+    <div class="symbol" draggable="true">C</div>
+    <div class="symbol" draggable="true">D</div>
+
+    <div id="input-container">
+        <input type="text" id="input-field" placeholder="Arrastra aquí">
+    </div>
+
+    <!-- Nuevo contenedor -->
+    <div id="input-container2">
+        <input type="text" id="input-field2" placeholder="Arrastra aquí">
+    </div>
+
+    <script>
+        const inputField = document.getElementById('input-field');
+        const inputField2 = document.getElementById('input-field2');
+
+        // Manejador de eventos para el inicio del arrastre
+        function handleDragStart(event) {
+            event.dataTransfer.setData('text/plain', event.target.textContent);
+        }
+
+        // Manejador de eventos para el soltar
+        function handleDrop(event) {
+            event.preventDefault();
+            const symbol = event.dataTransfer.getData('text/plain');
+            inputField.value = symbol;
+            inputField2.value = symbol; // Asigna el valor al segundo input también
+        }
+
+        // Evita el comportamiento predeterminado al arrastrar sobre el área de destino
+        function handleDragOver(event) {
+            event.preventDefault();
+        }
+
+        // Asigna los manejadores de eventos a los símbolos
+        const symbols = document.querySelectorAll('.symbol');
+        symbols.forEach(symbol => {
+            symbol.addEventListener('dragstart', handleDragStart);
+        });
+
+        // Asigna los manejadores de eventos al área de destino
+        inputField.addEventListener('drop', handleDrop);
+        inputField2.addEventListener('drop', handleDrop);
+        inputField.addEventListener('dragover', handleDragOver);
+        inputField2.addEventListener('dragover', handleDragOver);
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+.mainContainer {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    width: 30px;
+    height: 30px; 
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+.inputOperacion{
+    border: 2px solid #0062ff;
+}
+.inputsimbolo{
+    border: 2px solid #000000;
+}
+input::placeholder{
+    color: #3498db;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Estilo para los párrafos */
+p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+label{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.symbol, .operacion {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    cursor: move; 
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+.symbol{
+    border: 2px solid #000000;
+} 
+.operacion {
+    border: 2px solid #0062ff;
+}
+.generar-boton{
+    background-color: #0062ff; /* Color de fondo */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.2em;
+    font-family: sans-serif;
+    min-width: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #0062ff;
+}
+th, td {
+    padding: 12px 15px;
+    font-size: 1em;
+
+}
+thead tr {
+    background-color: #0062ff;
+    color: #ffffff;
+    text-align: left;
+}
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #0062ff;
+}

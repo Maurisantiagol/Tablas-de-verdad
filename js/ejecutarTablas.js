@@ -1,0 +1,23 @@
+let valorSimbolo1 = document.querySelector('#input-simbolo1').value;
+let valorSimbolo2 = document.querySelector('#input-simbolo2').value;
+let valorSimbolo3 = document.querySelector('#input-simbolo3').value;
+let valorSimbolo4 = document.querySelector('#input-simbolo4').value;
+let valorSimbolo5 = document.querySelector('#input-simbolo5').value;
+let valorSimbolo6 = document.querySelector('#input-simbolo6').value;
+let valorSimbolo7 = document.querySelector('#input-simbolo7').value;
+let valorOperacion1 = document.querySelector('#input-operacion1').value;
+let valorOperacion2 = document.querySelector('#input-operacion2').value;
+let valorOperacion3 = document.querySelector('#input-operacion3').value;
+let valorOperacion4 = document.querySelector('#input-operacion4').value;
+let valorOperacion5 = document.querySelector('#input-operacion5').value;
+let valorOperacion6 = document.querySelector('#input-operacion6').value;
+let valorOperacion7 = document.querySelector('#input-operacion7').value;
+let valorOperacion8 = document.querySelector('#input-operacion8').value;
+let primerafila=["p","q","r","s","("+valorSimbolo1+"p"+valorOperacion1+valorSimbolo2 +"q)","("+valorSimbolo3+"r"+valorOperacion3+valorSimbolo4 +"s)","("+valorSimbolo1+"p"+valorOperacion1+valorSimbolo2 +"q)"+valorOperacion2+"("+valorSimbolo3+"r"+valorOperacion3+valorSimbolo4 +"s)"];
+let segundafila=["p","q","s","(p"+valorOperacion4+valorSimbolo5+"q)","[(p"+valorOperacion4+valorSimbolo5+"q)"+valorOperacion5+"s]","(s"+valorOperacion8+valorSimbolo7+"q)","["+valorSimbolo6+"p"+valorOperacion7+"(s"+valorOperacion8+valorSimbolo7+"q)]","[[(p"+valorOperacion4+valorSimbolo5+"q)"+valorOperacion5+"s]"+valorOperacion6+"["+valorSimbolo6+"p"+valorOperacion7+"(s"+valorOperacion8+valorSimbolo7+"q)]]"];
+        let resultadosFinal1=ejecutarTabla1(valorSimbolo1,valorOperacion1,valorSimbolo2,valorOperacion2,valorSimbolo3,valorOperacion3,valorSimbolo4);
+        let resultadosFinal2=ejecutarTabla2(valorOperacion4,valorSimbolo5,valorOperacion5,valorOperacion6,valorSimbolo6,valorOperacion7,valorOperacion8,valorSimbolo7);
+        let resultadosOperacion1t1=op1Tabla1(valorSimbolo1,valorOperacion1,valorSimbolo2);
+        let resultadosOperacion2t1=op2Tabla1(valorSimbolo3,valorOperacion3,valorSimbolo4);
+console.log(resultadosFinal1);
+
